@@ -56,7 +56,7 @@ const { createReadStream, createWriteStream } = require('fs');
           const readComponentStream = fs.createReadStream(filePath, 'utf-8');
           readComponentStream.on('data', async function (component) {
             data = data.replaceAll(
-              `{{${fileName.replace('.html', '')}}`,
+              `{{${fileName.replace('.html', '')}}}`,
               component,
             );
             await writeFile(pathToIndexHtml, data, 'utf-8');
